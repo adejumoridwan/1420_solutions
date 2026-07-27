@@ -1,0 +1,36 @@
+---
+import Layout from "@layouts/default.astro";
+import HeroSection from "@components/marketing/hero-section.astro";
+import SectionHeading from "@components/marketing/section-heading.astro";
+import CtaSection from "@components/marketing/cta-section.astro";
+
+const points = [
+  'Bespoke internal tools built around your exact process.',
+  'Integrations between ERPNext and third-party systems such as POS, LMS, access control, and accounting tools.',
+  'Workflow automation to remove manual, repetitive steps.',
+  'API development and ongoing maintenance of custom builds.',
+];
+---
+
+<Layout title="Custom Software Development" description="1420 Solutions builds custom software and integrations that extend ERPNext for operational workflows.">
+  <div class="space-y-12 px-6 py-8 sm:px-8 lg:px-10 lg:py-10">
+    <HeroSection
+      eyebrow="Custom Software Development"
+      title="If your workflow is specific enough, we will build around it."
+      subheadline="Sometimes your process is specific enough that no ERP module — customized or not — covers it."
+      ctaHref="/contact"
+      ctaLabel="Learn more about custom software"
+    />
+
+    <section class="rounded-3xl border border-stone-200 bg-white p-8 shadow-sm dark:border-stone-700 dark:bg-stone-900 sm:p-10 lg:p-12">
+      <SectionHeading title="What we build" intro="We create practical tools that support your existing ERP foundation instead of forcing you into a workaround." />
+      <ul class="mt-8 grid gap-4 md:grid-cols-2">
+        {points.map((point) => (
+          <li class="rounded-2xl border border-stone-200 bg-slate-50 p-5 text-sm leading-7 text-stone-700 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-300">{point}</li>
+        ))}
+      </ul>
+    </section>
+
+    <CtaSection title="Need a tool that your current stack does not provide?" body="We can design and deliver a focused internal application that plugs into your systems and supports your team." href="/contact" label="Book a free consultation" />
+  </div>
+</Layout>

@@ -1,0 +1,36 @@
+---
+import Layout from "@layouts/default.astro";
+import HeroSection from "@components/marketing/hero-section.astro";
+import SectionHeading from "@components/marketing/section-heading.astro";
+import CtaSection from "@components/marketing/cta-section.astro";
+
+const points = [
+  'Quarterly and yearly business performance reports.',
+  'KPI dashboards tailored to your industry.',
+  'Trend analysis and forecasting.',
+  'Board-ready summaries, not raw spreadsheets.',
+];
+---
+
+<Layout title="Data Analysis & Reporting" description="1420 Solutions turns ERPNext and operational data into quarterly and yearly reporting that supports decisions.">
+  <div class="space-y-12 px-6 py-8 sm:px-8 lg:px-10 lg:py-10">
+    <HeroSection
+      eyebrow="Data Analysis & Reporting"
+      title="Turn your ERP data into a quarterly board-ready report."
+      subheadline="Your ERP is collecting data every day — but turning it into decisions usually falls on a to-do list that never gets done."
+      ctaHref="/contact"
+      ctaLabel="Learn more about data reporting"
+    />
+
+    <section class="rounded-3xl border border-stone-200 bg-white p-8 shadow-sm dark:border-stone-700 dark:bg-stone-900 sm:p-10 lg:p-12">
+      <SectionHeading title="What we deliver" intro="We turn operational data into practical reporting that helps leadership make decisions without spending the week rebuilding spreadsheets." />
+      <ul class="mt-8 grid gap-4 md:grid-cols-2">
+        {points.map((point) => (
+          <li class="rounded-2xl border border-stone-200 bg-slate-50 p-5 text-sm leading-7 text-stone-700 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-300">{point}</li>
+        ))}
+      </ul>
+    </section>
+
+    <CtaSection title="Need better reporting for your leadership team?" body="We will shape the right KPIs, data model, and reporting cadence so the output is useful and on time." href="/contact" label="Book a free consultation" />
+  </div>
+</Layout>

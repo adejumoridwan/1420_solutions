@@ -1,0 +1,54 @@
+---
+import Layout from "@layouts/default.astro";
+import HeroSection from "@components/marketing/hero-section.astro";
+import SectionHeading from "@components/marketing/section-heading.astro";
+import CtaSection from "@components/marketing/cta-section.astro";
+
+const locale = 'en';
+---
+
+<Layout title="About 1420 Solutions" description="1420 Solutions is a practical implementation partner for ERPNext, custom software, AI, and data reporting services across complex operations.">
+  <div class="space-y-12 px-6 py-8 sm:px-8 lg:px-10 lg:py-10">
+    <HeroSection
+      eyebrow="About 1420 Solutions"
+      title="We help businesses turn operational complexity into a system they can actually run."
+      subheadline="We are not just an ERP vendor. We are an implementation partner that connects process design, technology configuration, custom software, AI, and reporting into one operating model."
+      ctaHref="/contact"
+      ctaLabel="Book a free consultation"
+    />
+
+    <section class="rounded-3xl border border-stone-200 bg-white p-8 shadow-sm dark:border-stone-700 dark:bg-stone-900 sm:p-10 lg:p-12">
+      <SectionHeading title="Our approach" intro="We start with the workflow, not the software. That means clear discovery, practical configuration, and a long-term support model that helps teams keep improving after launch." />
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <div class="rounded-2xl border border-stone-200 bg-slate-50 p-6 dark:border-stone-700 dark:bg-stone-950">
+          <h3 class="text-lg font-semibold">Implementation-first</h3>
+          <p class="mt-2 text-sm leading-7 text-stone-600 dark:text-stone-300">We configure ERPNext around your real processes, not around a generic template.</p>
+        </div>
+        <div class="rounded-2xl border border-stone-200 bg-slate-50 p-6 dark:border-stone-700 dark:bg-stone-950">
+          <h3 class="text-lg font-semibold">Built to extend</h3>
+          <p class="mt-2 text-sm leading-7 text-stone-600 dark:text-stone-300">When the ERP platform stops at the edge of your workflow, we develop the missing pieces.</p>
+        </div>
+        <div class="rounded-2xl border border-stone-200 bg-slate-50 p-6 dark:border-stone-700 dark:bg-stone-950">
+          <h3 class="text-lg font-semibold">Measured over time</h3>
+          <p class="mt-2 text-sm leading-7 text-stone-600 dark:text-stone-300">We stay involved through training, support, and reporting so the solution continues to serve the business.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="rounded-3xl border border-stone-200 bg-gradient-to-br from-slate-50 to-sky-50 p-8 shadow-sm dark:border-stone-700 dark:bg-stone-900 sm:p-10 lg:p-12">
+      <SectionHeading title="Why clients work with us" intro="We bring ERP depth, software development capability, and AI experience together so you have one team to build and improve the system." />
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        <div class="rounded-2xl border border-stone-200 bg-white p-6 dark:border-stone-700 dark:bg-stone-950">
+          <h3 class="text-lg font-semibold">Industry-savvy delivery</h3>
+          <p class="mt-2 text-sm leading-7 text-stone-600 dark:text-stone-300">Our work is shaped by the realities of education, hospitality, manufacturing, healthcare, gyms, and real estate operations.</p>
+        </div>
+        <div class="rounded-2xl border border-stone-200 bg-white p-6 dark:border-stone-700 dark:bg-stone-950">
+          <h3 class="text-lg font-semibold">Practical technology</h3>
+          <p class="mt-2 text-sm leading-7 text-stone-600 dark:text-stone-300">We focus on tools that solve specific operational problems — from billing and planning to forecasting and compliance.</p>
+        </div>
+      </div>
+    </section>
+
+    <CtaSection title="Ready to talk about your next system upgrade?" body="We will help you map the right starting point, from ERPNext setup to custom software and AI automation." href="/contact" label="Book a free consultation" />
+  </div>
+</Layout>

@@ -1,0 +1,39 @@
+---
+import Layout from "@layouts/default.astro";
+import HeroSection from "@components/marketing/hero-section.astro";
+import SectionHeading from "@components/marketing/section-heading.astro";
+import IndustryCard from "@components/marketing/industry-card.astro";
+import CtaSection from "@components/marketing/cta-section.astro";
+
+const industries = [
+  { title: 'Education', description: 'Admissions, fees, and staff HR in one system for schools and training providers.', href: '/industries/education', tag: 'ERPNext Education' },
+  { title: 'Hospitality', description: 'Reservations, housekeeping, and inventory in sync across properties and teams.', href: '/industries/hospitality', tag: 'Multi-property operations' },
+  { title: 'Gym & Fitness', description: 'Memberships, scheduling, and billing on autopilot for growing clubs.', href: '/industries/gym-fitness', tag: 'Membership management' },
+  { title: 'Manufacturing', description: 'Production planning, BOMs, and supply chain visibility under one roof.', href: '/industries/manufacturing', tag: 'Production control' },
+  { title: 'Real Estate & Construction', description: 'Projects, budgets, and vendors tracked end to end from site to close.', href: '/industries/real-estate-construction', tag: 'Project delivery' },
+  { title: 'Hospitals & Healthcare', description: 'Patient records, billing, and compliance handled with operational clarity.', href: '/industries/healthcare', tag: 'Healthcare operations' },
+];
+---
+
+<Layout title="Solutions and Industries" description="1420 Solutions delivers ERPNext implementation, custom software, AI tools, and reporting for six core industry verticals.">
+  <div class="space-y-12 px-6 py-8 sm:px-8 lg:px-10 lg:py-10">
+    <HeroSection
+      eyebrow="Solutions & industries"
+      title="Industry-specific ERP and software solutions built to fit the way you operate."
+      subheadline="Our work begins with the realities of your operations and expands into the systems, reporting, and automations that support growth."
+      ctaHref="/contact"
+      ctaLabel="Book a free consultation"
+    />
+
+    <section class="rounded-3xl border border-stone-200 bg-white p-8 shadow-sm dark:border-stone-700 dark:bg-stone-900 sm:p-10 lg:p-12">
+      <SectionHeading title="Explore our verticals" intro="Each engagement is shaped around the workflows, reporting requirements, and growth plans specific to the industry." />
+      <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {industries.map((industry) => (
+          <IndustryCard title={industry.title} description={industry.description} href={industry.href} tag={industry.tag} />
+        ))}
+      </div>
+    </section>
+
+    <CtaSection title="Not sure which industry page fits your team?" body="Tell us about your operation and we will point you to the relevant ERP and service path." href="/contact" label="Schedule a conversation" />
+  </div>
+</Layout>

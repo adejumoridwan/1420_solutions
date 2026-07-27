@@ -1,0 +1,37 @@
+---
+import Layout from "@layouts/default.astro";
+import HeroSection from "@components/marketing/hero-section.astro";
+import SectionHeading from "@components/marketing/section-heading.astro";
+import CtaSection from "@components/marketing/cta-section.astro";
+
+const points = [
+  'ERPNext consulting and needs assessment.',
+  'Setup and configuration for your specific modules.',
+  'Data migration from legacy systems or spreadsheets.',
+  'Staff training and change management.',
+  'Ongoing support and maintenance.',
+];
+---
+
+<Layout title="ERP Implementation" description="1420 Solutions helps clients implement and customize ERPNext for their industry workflows and reporting needs.">
+  <div class="space-y-12 px-6 py-8 sm:px-8 lg:px-10 lg:py-10">
+    <HeroSection
+      eyebrow="ERP Implementation"
+      title="ERP implementation that fits how your organization actually runs."
+      subheadline="Off-the-shelf ERP rarely fits an operation on day one — and a botched implementation costs more than the software itself."
+      ctaHref="/contact"
+      ctaLabel="Learn more about implementation"
+    />
+
+    <section class="rounded-3xl border border-stone-200 bg-white p-8 shadow-sm dark:border-stone-700 dark:bg-stone-900 sm:p-10 lg:p-12">
+      <SectionHeading title="What is included" intro="From first workshop to go-live, we handle the implementation end to end." />
+      <ul class="mt-8 grid gap-4 md:grid-cols-2">
+        {points.map((point) => (
+          <li class="rounded-2xl border border-stone-200 bg-slate-50 p-5 text-sm leading-7 text-stone-700 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-300">{point}</li>
+        ))}
+      </ul>
+    </section>
+
+    <CtaSection title="Need a practical ERP rollout plan?" body="We will help you scope the right modules, timeline, and support model from the outset." href="/contact" label="Book a free consultation" />
+  </div>
+</Layout>

@@ -1,0 +1,64 @@
+---
+import Layout from "@layouts/default.astro";
+import HeroSection from "@components/marketing/hero-section.astro";
+import SectionHeading from "@components/marketing/section-heading.astro";
+import CtaSection from "@components/marketing/cta-section.astro";
+
+const challenges = [
+  'Production schedules built on guesswork instead of real demand data.',
+  'Raw material stockouts that halt the line with no warning.',
+  'BOMs that live in someone\'s head or an outdated spreadsheet.',
+  'No visibility into supplier lead times until it is too late.',
+  'Quality issues caught after the batch ships, not before.',
+];
+
+const modules = [
+  ['Production Planning', 'Work orders, capacity planning, and job cards tied to real demand.'],
+  ['Bill of Materials (BOM)', 'Multi-level BOMs with version control so every product spec is accurate and traceable.'],
+  ['Inventory & Warehouse Management', 'Real-time stock levels across raw materials, WIP, and finished goods.'],
+  ['Supply Chain & Procurement', 'Automated reorder points, supplier tracking, and purchase order workflows.'],
+  ['Quality Control', 'Inspection checkpoints built into the production process, not bolted on later.'],
+];
+---
+
+<Layout title="Manufacturing Solutions" description="1420 Solutions implements ERPNext manufacturing capabilities for production planning, BOMs, inventory, and quality control.">
+  <div class="space-y-12 px-6 py-8 sm:px-8 lg:px-10 lg:py-10">
+    <HeroSection
+      eyebrow="Manufacturing solutions"
+      title="Stop firefighting stockouts and production delays with spreadsheets."
+      subheadline="1420 Solutions implements ERPNext's Manufacturing module — customized for your production floor, supply chain, and quality standards — so your team plans production instead of chasing it."
+      ctaHref="/contact"
+      ctaLabel="Request a demo"
+    />
+
+    <section class="rounded-3xl border border-stone-200 bg-white p-8 shadow-sm dark:border-stone-700 dark:bg-stone-900 sm:p-10 lg:p-12">
+      <SectionHeading title="Key challenges we solve" intro="Manufacturers need production visibility and control that keeps the line moving and the cost of delays under control." />
+      <ul class="mt-8 grid gap-4 md:grid-cols-2">
+        {challenges.map((item) => (
+          <li class="rounded-2xl border border-stone-200 bg-slate-50 p-5 text-sm leading-7 text-stone-700 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-300">{item}</li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="rounded-3xl border border-stone-200 bg-gradient-to-br from-slate-50 to-sky-50 p-8 shadow-sm dark:border-stone-700 dark:bg-stone-900 sm:p-10 lg:p-12">
+      <SectionHeading title="What we implement" intro="Built on ERPNext's Manufacturing module, customized for your operation." />
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        {modules.map(([title, body]) => (
+          <div class="rounded-2xl border border-stone-200 bg-white p-6 dark:border-stone-700 dark:bg-stone-950">
+            <h3 class="text-lg font-semibold">{title}</h3>
+            <p class="mt-2 text-sm leading-7 text-stone-600 dark:text-stone-300">{body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="rounded-3xl border border-stone-200 bg-white p-8 shadow-sm dark:border-stone-700 dark:bg-stone-900 sm:p-10 lg:p-12">
+      <SectionHeading title="Example outcome" intro="A manufacturer can reduce downtime and improve material visibility when production planning, procurement, and inventory data are tied together in one system." />
+      <div class="mt-8 rounded-2xl border border-stone-200 bg-slate-50 p-8 dark:border-stone-700 dark:bg-stone-950">
+        <p class="text-lg leading-8 text-stone-700 dark:text-stone-300">A [client name / industry segment] manufacturer reduced production downtime by [X%] and cut raw material stockouts by [X%] within [timeframe] of implementing ERPNext with 1420 Solutions.</p>
+      </div>
+    </section>
+
+    <CtaSection title="Ready to run your production floor on real data?" href="/contact" label="Book a free consultation" />
+  </div>
+</Layout>

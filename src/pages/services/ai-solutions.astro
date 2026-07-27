@@ -1,0 +1,36 @@
+---
+import Layout from "@layouts/default.astro";
+import HeroSection from "@components/marketing/hero-section.astro";
+import SectionHeading from "@components/marketing/section-heading.astro";
+import CtaSection from "@components/marketing/cta-section.astro";
+
+const points = [
+  'Document processing and data extraction from invoices, forms, and scanned records.',
+  'Predictive analytics for stock-outs, demand shifts, or churn risk.',
+  'Support and operations chatbots trained on your internal data.',
+  'Anomaly detection for billing issues, claim rejections, and mismatched POs.',
+];
+---
+
+<Layout title="AI Solutions" description="1420 Solutions builds practical AI tools that automate repetitive work and work from ERP data.">
+  <div class="space-y-12 px-6 py-8 sm:px-8 lg:px-10 lg:py-10">
+    <HeroSection
+      eyebrow="AI Solutions"
+      title="AI that solves a specific problem — not a vague promise."
+      subheadline="We build AI tools that plug directly into your ERPNext data: automating the repetitive, catching what humans miss, and giving your team time back."
+      ctaHref="/contact"
+      ctaLabel="Book a free consultation"
+    />
+
+    <section class="rounded-3xl border border-stone-200 bg-white p-8 shadow-sm dark:border-stone-700 dark:bg-stone-900 sm:p-10 lg:p-12">
+      <SectionHeading title="What we build" intro="Our AI tools are designed to read from and write back to your ERP system so insights and automations show up where your team already works." />
+      <ul class="mt-8 grid gap-4 md:grid-cols-2">
+        {points.map((point) => (
+          <li class="rounded-2xl border border-stone-200 bg-slate-50 p-5 text-sm leading-7 text-stone-700 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-300">{point}</li>
+        ))}
+      </ul>
+    </section>
+
+    <CtaSection title="Have a repetitive problem? Let us see if AI can solve it." body="We will help you identify the right use case, define the workflow, and connect it to your ERP data." href="/contact" label="Book a free consultation" />
+  </div>
+</Layout>
